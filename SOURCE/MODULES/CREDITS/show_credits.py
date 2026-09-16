@@ -42,7 +42,7 @@ BANNER = r"""
                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                  \
                   \__________________________________________________________________________
-                   \ Credits go to @Alfredredbird who helped with creating this Framework       |
+                   \ Credits go to @Alfredredbird who helped with creating this Framework    |
                     \     checkout his github: https://github.com/Alfredredbird              |
                      \_______________________________________________________________________|
 """
