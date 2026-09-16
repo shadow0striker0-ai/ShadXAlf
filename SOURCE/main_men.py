@@ -16,9 +16,13 @@ LOGO = r"""
 ╚██████╔╝███████║██║██║ ╚████║   ██║       ██║     ██║  ██║██║  ██║██║ ╚═╝ ██║███████╗╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗
  ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═══╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
- [1] - Username Searcher [SOON]
- 
- 
+        [1] - Username Searcher [SOON]   [2] - Email Searcher  [SOON]      [3] - Phone Number Searcher [SOON]
+        [4] - IP Tracker        [SOON]   [5] - Domain Searcher [SOON]      [6] - Social Media Searcher [SOON]
+
+        
+                
+        [99] - Exit
+        [999] - Credits
  
  
  """
