@@ -53,7 +53,9 @@ from time import sleep
 import subprocess
 import sys
 
-print(BANNER)
+CYAN = "\033[96m"
+
+print(f"{CYAN}BANNER{CYAN}")
 sleep(5)
 
 project_root = Path(__file__).resolve().parents[3]
