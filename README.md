@@ -1,2 +1,2 @@
 # ShadXAlf
-an OSINT Framework collaboration with Alfredbird
+<img src="SOURCE/UPLOADS_FOR_README/Collab_Readme.png" alt="ShadXAlf" width="800">
