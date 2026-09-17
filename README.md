@@ -6,4 +6,4 @@
 This tool is intended solely for legal purposes; I assume no responsibility for any illegal use of this tool.
 ---------------------------------------------
 
-       *ShadXAlf OSINT-Framework*
+#.       ShadXAlf OSINT-Framework
