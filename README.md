@@ -19,7 +19,7 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 - Certificate Transparency subdomain enumeration through `crt.name`
 - Credits screen
 
-### In Progress
+> In Progress
 
 - Username searcher
 - Email searcher
