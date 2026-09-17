@@ -85,10 +85,41 @@ if user_input.lower() == 'y':
     else:
         os.system('clear')
 
-    #enter the menu
+    #enter setup
     print(f"{CYAN}Continuing with the setup...{CYAN}")
-    sys.exit(0)
-    #clear the screen
+
+    #loading animations
+    for dot_count in range(1, 8):
+        print(f"\rCheck Availability{'.' * dot_count}", end="", flush=True)
+        sleep(0.4)
+    print(" Done!")
+    for dot2_count in range(1, 10):
+        print(f"\rUpdating Modules{'.' * dot2_count}", end="", flush=True)
+        sleep(0.4)
+    print(" Done!")
+    for dot2_count in range(1, 10):
+        print(f"\rUpdating Methods{'.' * dot2_count}", end="", flush=True)
+        sleep(0.4)
+    print(" Done!")
+    for dot2_count in range(1, 10):
+        print(f"\rFetching Modules{'.' * dot2_count}", end="", flush=True)
+        sleep(1)
+    print(" Done!")
+    for dot2_count in range(1, 10):
+        print(f"\rFetching Methods{'.' * dot2_count}", end="", flush=True)
+        sleep(1)
+    print(" Done!")
+    for dot2_count in range(1, 11):
+        print(f"\rLoading Modules{'.' * dot2_count}", end="", flush=True)
+        sleep(1.2)
+    print(" Done!")
+    for dot2_count in range(1, 6):
+        print(f"\rInitzializing System{'.' * dot2_count}", end="", flush=True)
+        sleep(1.7)
+    print(" Done!")
+    
+    
+    
 
 #no statement
 elif user_input.lower() == 'n':
