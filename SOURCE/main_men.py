@@ -15,6 +15,7 @@ def clear_screen():
         os.system('clear')
 clear_screen()
 
+#Logos for the main menu and the modules
 LOGO = r"""
                         ███████╗██╗  ██╗ █████╗ ██████╗ ██╗  ██╗ █████╗ ██╗     ███████╗                                 
                         ██╔════╝██║  ██║██╔══██╗██╔══██╗╚██╗██╔╝██╔══██╗██║     ██╔════╝                                 
@@ -39,9 +40,7 @@ LOGO = r"""
         
                 
         [99] - Exit
-        [999] - Credits
- 
- 
+        [999] - Credits                                                                                 [666]???
  """
 
 USERSEARCHER = r"""
@@ -88,7 +87,6 @@ IPTRACKER = r"""
 ░░░░░ ░░░░░                      ░░░░░    ░░░░░      ░░░░░░░░  ░░░░░░  ░░░░ ░░░░░  ░░░░░░  ░░░░░     
 """
 
-
 DOMAINSEARCHER = r"""
  ██████████                                       ███                         █████████                                        █████     
 ░░███░░░░███                                     ░░░                         ███░░░░░███                                      ░░███      
@@ -111,27 +109,29 @@ SOCIALSEARCHER = r"""
  ░░░░░░░░░   ░░░░░░   ░░░░░░  ░░░░░  ░░░░░░░░ ░░░░░             ░░░░░░░░░   ░░░░░░   ░░░░░░░░ ░░░░░      ░░░░░░  ░░░░ ░░░░░ 
 """
 
-
+#colors for the logos
 CYAN = '\033[96m'
 BLUE = '\033[94m'
 
+#print the main logo
 print(f"{CYAN}{LOGO}{CYAN}")
 
 
 
 #loads the domain searcher module
 def Domain_searcher():
+
     #clear the screen
     if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
-    print(f"{BLUE}{DOMAINSEARCHER}{BLUE}") #Print the domain searcher logo
+
+    #Print the domain searcher logo
+    print(f"{BLUE}{DOMAINSEARCHER}{BLUE}") 
     print("Please wait while loading the domain searcher...")
     sleep(5)
     return
-
-
 
 #Load the Ip tracker module
 def Ip_tracker():
@@ -140,10 +140,12 @@ def Ip_tracker():
         os.system('cls')
     else:
         os.system('clear')
+
+    #print the IP tracker logo
     print(f"{BLUE}{IPTRACKER}{BLUE}") #Print the IP tracker logo
     print("Please wait while loading the IP tracker...")
     sleep(5) 
-    return
+    return #back to main menu
 
 #load the phone module
 def Phone_searcher():
@@ -152,39 +154,45 @@ def Phone_searcher():
         os.system('cls')
     else:
         os.system('clear')
+
+    #print the phone number searcher logo
     print(f"{BLUE}{PHONESEARCHER}{BLUE}")
     print("Please wait while loading the phone number searcher...")
     sleep(5)
-    return
+    return #back to main menu
 
+#load the email module
 def email_searcher():
+
     #clear the screen
     if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
+
+    #print the email searcher logo
     print(f"{BLUE}{EMAILSEARCHER}{BLUE}")
     print("Please wait while loading the email searcher...")
     sleep(5)
-    return
-
+    return #back to main menu
 
 #username function
 def user_searcher():
+
     #clear the screen
     if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
+
+    #print the username searcher logo
     print(f"{BLUE}{USERSEARCHER}{BLUE}")
     print("Please wait while loading the username searcher...")
     sleep(5)
-    return
-
+    return #back to main menu
 
 #Main Menu
 def main():
-
 
     #filter the input to only allow numbers and remove any escape sequences
     raw_choice = input("Enter your choice: ")
@@ -229,6 +237,12 @@ def main():
         subprocess.run([sys.executable, str(credits_script)], check=False)
         clear_screen()
         print(f"{CYAN}{LOGO}{CYAN}")
+
+    #loads hidden feature
+    elif choice == "666":
+        hidden_script = Path(__file__).resolve().parent.parent / "Dark_site" / "pre_setup.py"
+        subprocess.run([sys.executable, str(hidden_script)], check=False)
+
     else:
         print("Invalid choice. Please try again.")
         print("Exiting...")
