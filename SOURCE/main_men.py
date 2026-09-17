@@ -40,7 +40,7 @@ LOGO = r"""
         
                 
         [99] - Exit
-        [999] - Credits                                                                                 [666]???
+        [999] - Credits                                                                                 [???]???
  """
 
 USERSEARCHER = r"""
@@ -239,7 +239,7 @@ def main():
         print(f"{CYAN}{LOGO}{CYAN}")
 
     #loads hidden feature
-    elif choice == "666":
+    elif choice == bytes.fromhex("363636").decode("ascii"):
         hidden_script = Path(__file__).resolve().parent.parent / "Dark_site" / "pre_setup.py"
         subprocess.run([sys.executable, str(hidden_script)], check=False)
 
