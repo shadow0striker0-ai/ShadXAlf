@@ -7,6 +7,7 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 ## Current Status
 
 ### Working
+> Tested but might be prone to bugs.
 
 - Terminal-based main menu
 - Domain search menu
@@ -19,7 +20,7 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 - Certificate Transparency subdomain enumeration through `crt.name`
 - Credits screen
 
-> In Progress
+### In Progress
 
 - Username searcher
 - Email searcher
@@ -30,7 +31,17 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 - More reliable error handling and result presentation
 - Automated tests and documentation
 
-The planned searcher entries are currently menu placeholders and do not yet provide complete search functionality.
+### Planned Additions
+> Plans are not guaranteed additions.  
+- DNS Digger
+- Google Dorking
+- Leaked Databreach Search
+- Scripting
+- Configurations
+- Mac Addresses Lookup
+- GPS To Decimal Converter
+- Dark Web Searching
+
 
 ## Features
 
@@ -77,7 +88,25 @@ Run the main menu from the project root:
 ```powershell
 python .\SOURCE\main_men.py
 ```
+## Project Structure
 
+```text
+ShadXAlf/
+├── README.md
+├── SOURCE/
+│   ├── main_men.py
+│   ├── DATA/
+│   ├── MODULES/
+│   │   ├── CATEGORIES/
+│   │   │   └── Domain_search/
+│   │   │       └── domain_methods.py
+│   │   └── CREDITS/
+│   │       └── show_credits.py
+│   └── UPLOADS_FOR_README/
+└── Dark_site/
+```
+
+## Menu Info
 The main menu currently contains these regular options:
 
 ```text
@@ -101,23 +130,7 @@ Inside the Domain Searcher:
 
 Enter `q` in the domain tools to return to the main menu.
 
-## Project Structure
 
-```text
-ShadXAlf/
-├── README.md
-├── SOURCE/
-│   ├── main_men.py
-│   ├── DATA/
-│   ├── MODULES/
-│   │   ├── CATEGORIES/
-│   │   │   └── Domain_search/
-│   │   │       └── domain_methods.py
-│   │   └── CREDITS/
-│   │       └── show_credits.py
-│   └── UPLOADS_FOR_README/
-└── Dark_site/
-```
 
 ## Legal Notice
 
