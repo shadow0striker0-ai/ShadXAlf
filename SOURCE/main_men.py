@@ -1,3 +1,4 @@
+#imports
 import os
 import re
 import subprocess
@@ -11,8 +12,6 @@ def clear_screen():
         os.system('cls')
     else:
         os.system('clear')
-
-
 clear_screen()
 
 LOGO = r"""
