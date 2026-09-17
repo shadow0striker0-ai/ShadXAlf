@@ -35,7 +35,7 @@ LOGO = r"""
  ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═══╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
         [1] - Username Searcher [SOON]   [2] - Email Searcher  [SOON]      [3] - Phone Number Searcher [SOON]
-        [4] - IP Tracker        [SOON]   [5] - Domain Searcher [SOON]      [6] - Social Media Searcher [SOON]
+        [4] - IP Tracker        [SOON]   [5] - Domain Searcher [Work]      [6] - Social Media Searcher [SOON]
 
         
                 
@@ -87,17 +87,6 @@ IPTRACKER = r"""
 ░░░░░ ░░░░░                      ░░░░░    ░░░░░      ░░░░░░░░  ░░░░░░  ░░░░ ░░░░░  ░░░░░░  ░░░░░     
 """
 
-DOMAINSEARCHER = r"""
- ██████████                                       ███                         █████████                                        █████     
-░░███░░░░███                                     ░░░                         ███░░░░░███                                      ░░███      
- ░███   ░░███  ██████  █████████████    ██████   ████  ████████             ░███    ░░░   ██████   ██████   ████████   ██████  ░███████  
- ░███    ░███ ███░░███░░███░░███░░███  ░░░░░███ ░░███ ░░███░░███  ██████████░░█████████  ███░░███ ░░░░░███ ░░███░░███ ███░░███ ░███░░███ 
- ░███    ░███░███ ░███ ░███ ░███ ░███   ███████  ░███  ░███ ░███ ░░░░░░░░░░  ░░░░░░░░███░███████   ███████  ░███ ░░░ ░███ ░░░  ░███ ░███ 
- ░███    ███ ░███ ░███ ░███ ░███ ░███  ███░░███  ░███  ░███ ░███             ███    ░███░███░░░   ███░░███  ░███     ░███  ███ ░███ ░███ 
- ██████████  ░░██████  █████░███ █████░░████████ █████ ████ █████           ░░█████████ ░░██████ ░░████████ █████    ░░██████  ████ █████
-░░░░░░░░░░    ░░░░░░  ░░░░░ ░░░ ░░░░░  ░░░░░░░░ ░░░░░ ░░░░ ░░░░░             ░░░░░░░░░   ░░░░░░   ░░░░░░░░ ░░░░░      ░░░░░░  ░░░░ ░░░░
-"""
-
 SOCIALSEARCHER = r"""
   █████████                     ███            ████              █████████                                        █████     
  ███░░░░░███                   ░░░            ░░███             ███░░░░░███                                      ░░███      
@@ -112,11 +101,25 @@ SOCIALSEARCHER = r"""
 #colors for the logos
 CYAN = '\033[96m'
 BLUE = '\033[94m'
+RED = '\033[91m'
 
 #print the main logo
 print(f"{CYAN}{LOGO}{CYAN}")
 
+#loads the social searcher
+def Social_searcher():
 
+    #clear screen
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
+    #Print the social searcher logo
+    print(f"{RED}{SOCIALSEARCHER}{RED}")
+    print("Please wait while loading the social searcher..")
+    sleep(5)
+    print("Success")
 
 #loads the domain searcher module
 def Domain_searcher():
@@ -127,11 +130,16 @@ def Domain_searcher():
     else:
         os.system('clear')
 
-    #Print the domain searcher logo
-    print(f"{BLUE}{DOMAINSEARCHER}{BLUE}") 
+    #Loads the tool
     print("Please wait while loading the domain searcher...")
-    sleep(5)
-    return
+    domain_module = (
+        Path(__file__).resolve().parent
+        / "MODULES"
+        / "CATEGORIES"
+        / "Domain_search"
+        / "domain_methods.py"
+    )
+    subprocess.run([sys.executable, str(domain_module)], check=False)
 
 #Load the Ip tracker module
 def Ip_tracker():
@@ -145,7 +153,7 @@ def Ip_tracker():
     print(f"{BLUE}{IPTRACKER}{BLUE}") #Print the IP tracker logo
     print("Please wait while loading the IP tracker...")
     sleep(5) 
-    return #back to main menu
+    print("Success")
 
 #load the phone module
 def Phone_searcher():
@@ -159,7 +167,7 @@ def Phone_searcher():
     print(f"{BLUE}{PHONESEARCHER}{BLUE}")
     print("Please wait while loading the phone number searcher...")
     sleep(5)
-    return #back to main menu
+    print("Success")
 
 #load the email module
 def email_searcher():
@@ -174,7 +182,7 @@ def email_searcher():
     print(f"{BLUE}{EMAILSEARCHER}{BLUE}")
     print("Please wait while loading the email searcher...")
     sleep(5)
-    return #back to main menu
+    print("Success")
 
 #username function
 def user_searcher():
@@ -189,7 +197,7 @@ def user_searcher():
     print(f"{BLUE}{USERSEARCHER}{BLUE}")
     print("Please wait while loading the username searcher...")
     sleep(5)
-    return #back to main menu
+    print("Success")
 
 #Main Menu
 def main():
@@ -224,13 +232,14 @@ def main():
 
     #categorie 6
     elif choice == "6":
-        print("Social Media Searcher is coming soon!")
-        sleep(2)
+        Social_searcher() #hop into social searcher
+
     #exit function
     elif choice == "99":
         print("Exiting...")
         sleep(2)
         sys.exit(0)
+
     #show credits
     elif choice == "999":
         credits_script = Path(__file__).resolve().parent / "MODULES" / "CREDITS" / "show_credits.py"
@@ -243,12 +252,13 @@ def main():
         hidden_script = Path(__file__).resolve().parent.parent / "Dark_site" / "pre_setup.py"
         subprocess.run([sys.executable, str(hidden_script)], check=False)
 
+    #instant leave
     else:
         print("Invalid choice. Please try again.")
         print("Exiting...")
         sleep(2)
         sys.exit(0)
 
-
+#main entrance
 if __name__ == "__main__":
     main()
