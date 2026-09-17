@@ -117,10 +117,9 @@ if user_input.lower() == 'y':
         print(f"\rInitzializing System{'.' * dot2_count}", end="", flush=True)
         sleep(1.7)
     print(" Done!")
+    bad_men = Path(__file__).resolve().parent / "bad_men.py"
+    subprocess.run([sys.executable, str(bad_men)], check=False)
     
-    
-    
-
 #no statement
 elif user_input.lower() == 'n':
 
