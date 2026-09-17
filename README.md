@@ -131,8 +131,8 @@ Inside the Domain Searcher:
 Enter `q` in the domain tools to return to the main menu.
 
 
-
-## Legal Notice
+> [!IMPORTANT]\
+> Legal Notice
 
 ShadXAlf is intended for lawful security research, OSINT, education, and analysis of systems you own or are authorized to inspect. Always respect applicable laws, terms of service, privacy requirements, and the permissions of system owners.
 
