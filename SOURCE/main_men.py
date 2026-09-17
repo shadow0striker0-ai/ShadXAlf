@@ -2,6 +2,7 @@
 import os
 import re
 import subprocess
+import sys
 from pathlib import Path
 import unicodedata
 from time import sleep
@@ -75,8 +76,41 @@ PHONESEARCHER = r"""
  █████        ████ █████░░██████  ████ █████░░██████             ░░░███████░   ██████  █████ ████ █████  ░░█████ 
 ░░░░░        ░░░░ ░░░░░  ░░░░░░  ░░░░ ░░░░░  ░░░░░░                ░░░░░░░    ░░░░░░  ░░░░░ ░░░░ ░░░░░    ░░░░░  
 """
-import subprocess
-import sys
+
+IPTRACKER = r"""
+ █████ ███████████             ███████████                              █████                        
+░░███ ░░███░░░░░███           ░█░░░███░░░█                             ░░███                         
+ ░███  ░███    ░███           ░   ░███  ░  ████████   ██████    ██████  ░███ █████  ██████  ████████ 
+ ░███  ░██████████  ██████████    ░███    ░░███░░███ ░░░░░███  ███░░███ ░███░░███  ███░░███░░███░░███
+ ░███  ░███░░░░░░  ░░░░░░░░░░     ░███     ░███ ░░░   ███████ ░███ ░░░  ░██████░  ░███████  ░███ ░░░ 
+ ░███  ░███                       ░███     ░███      ███░░███ ░███  ███ ░███░░███ ░███░░░   ░███     
+ █████ █████                      █████    █████    ░░████████░░██████  ████ █████░░██████  █████    
+░░░░░ ░░░░░                      ░░░░░    ░░░░░      ░░░░░░░░  ░░░░░░  ░░░░ ░░░░░  ░░░░░░  ░░░░░     
+"""
+
+
+DOMAINSEARCHER = r"""
+ ██████████                                       ███                         █████████                                        █████     
+░░███░░░░███                                     ░░░                         ███░░░░░███                                      ░░███      
+ ░███   ░░███  ██████  █████████████    ██████   ████  ████████             ░███    ░░░   ██████   ██████   ████████   ██████  ░███████  
+ ░███    ░███ ███░░███░░███░░███░░███  ░░░░░███ ░░███ ░░███░░███  ██████████░░█████████  ███░░███ ░░░░░███ ░░███░░███ ███░░███ ░███░░███ 
+ ░███    ░███░███ ░███ ░███ ░███ ░███   ███████  ░███  ░███ ░███ ░░░░░░░░░░  ░░░░░░░░███░███████   ███████  ░███ ░░░ ░███ ░░░  ░███ ░███ 
+ ░███    ███ ░███ ░███ ░███ ░███ ░███  ███░░███  ░███  ░███ ░███             ███    ░███░███░░░   ███░░███  ░███     ░███  ███ ░███ ░███ 
+ ██████████  ░░██████  █████░███ █████░░████████ █████ ████ █████           ░░█████████ ░░██████ ░░████████ █████    ░░██████  ████ █████
+░░░░░░░░░░    ░░░░░░  ░░░░░ ░░░ ░░░░░  ░░░░░░░░ ░░░░░ ░░░░ ░░░░░             ░░░░░░░░░   ░░░░░░   ░░░░░░░░ ░░░░░      ░░░░░░  ░░░░ ░░░░
+"""
+
+SOCIALSEARCHER = r"""
+  █████████                     ███            ████              █████████                                        █████     
+ ███░░░░░███                   ░░░            ░░███             ███░░░░░███                                      ░░███      
+░███    ░░░   ██████   ██████  ████   ██████   ░███            ░███    ░░░   ██████   ██████   ████████   ██████  ░███████  
+░░█████████  ███░░███ ███░░███░░███  ░░░░░███  ░███  ██████████░░█████████  ███░░███ ░░░░░███ ░░███░░███ ███░░███ ░███░░███ 
+ ░░░░░░░░███░███ ░███░███ ░░░  ░███   ███████  ░███ ░░░░░░░░░░  ░░░░░░░░███░███████   ███████  ░███ ░░░ ░███ ░░░  ░███ ░███ 
+ ███    ░███░███ ░███░███  ███ ░███  ███░░███  ░███             ███    ░███░███░░░   ███░░███  ░███     ░███  ███ ░███ ░███ 
+░░█████████ ░░██████ ░░██████  █████░░████████ █████           ░░█████████ ░░██████ ░░████████ █████    ░░██████  ████ █████
+ ░░░░░░░░░   ░░░░░░   ░░░░░░  ░░░░░  ░░░░░░░░ ░░░░░             ░░░░░░░░░   ░░░░░░   ░░░░░░░░ ░░░░░      ░░░░░░  ░░░░ ░░░░░ 
+"""
+
 
 CYAN = '\033[96m'
 BLUE = '\033[94m'
@@ -84,6 +118,34 @@ BLUE = '\033[94m'
 print(f"{CYAN}{LOGO}{CYAN}")
 
 
+
+#loads the domain searcher module
+def Domain_searcher():
+    #clear the screen
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+    print(f"{BLUE}{DOMAINSEARCHER}{BLUE}") #Print the domain searcher logo
+    print("Please wait while loading the domain searcher...")
+    sleep(5)
+    return
+
+
+
+#Load the Ip tracker module
+def Ip_tracker():
+    #clear the screen
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+    print(f"{BLUE}{IPTRACKER}{BLUE}") #Print the IP tracker logo
+    print("Please wait while loading the IP tracker...")
+    sleep(5) 
+    return
+
+#load the phone module
 def Phone_searcher():
     #clear the screen
     if os.name == 'nt':
@@ -131,24 +193,27 @@ def main():
     choice = "".join(
         character for character in normalized_choice if character in "0123456789"
         )
+    
     #categorie 1
     if choice == "1":
-        user_searcher()
+        user_searcher() # hop into the username searcher function
+
     #categorie 2
     elif choice == "2":
-        email_searcher()
+        email_searcher() # hop into the email searcher function
+
     #categorie 3
     elif choice == "3":
-        print("Phone Number Searcher is coming soon!")
-        sleep(2)
+        Phone_searcher() # hop into the phone number searcher function
+
     #categorie 4
     elif choice == "4":
-        print("IP Tracker is coming soon!")
-        sleep(2)
+        Ip_tracker() # hop into the IP tracker function
+
     #categorie 5
     elif choice == "5":
-        print("Domain Searcher is coming soon!")
-        sleep(2)
+        Domain_searcher() # hop into the domain searcher function
+
     #categorie 6
     elif choice == "6":
         print("Social Media Searcher is coming soon!")
