@@ -2,7 +2,7 @@
 
 ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissance. The project is currently in active development and provides working domain-analysis tools together with menu placeholders for planned modules.
 
-<img src="SOURCE/UPLOADS_FOR_README/Collab_Readme.png" alt="ShadXAlf" width="800">
+<img src="/UPLOADS_FOR_README/Collab_Readme.png" alt="ShadXAlf" width="800">
 
 ## Current Status
 
