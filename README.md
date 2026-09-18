@@ -86,7 +86,7 @@ Certificate names are cleaned, filtered to the requested domain, deduplicated, a
 Run the main menu from the project root:
 
 ```powershell
-python .\SOURCE\main_men.py
+python main_men.py
 ```
 ## Project Structure
 
