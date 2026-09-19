@@ -53,7 +53,8 @@ watch live PoC below
 
 ### Live PoC
 
-[Watch Host Discovery](./UPLOADS_FOR_README/Host_discovery.mp4)
+The PoC are Currently to large for github displaying, click and you get downloaded PoC
+[Watch Host Discovery](https://raw.githubusercontent.com/shadow0striker0-ai/ShadXAlf/main/UPLOADS_FOR_README/Host_discovery.mp4)
 
 ### URL Checker
 
@@ -83,7 +84,8 @@ Certificate names are cleaned, filtered to the requested domain, deduplicated, a
 
 ## Live PoC
 
-[Watch Subdomain Enumeration](./UPLOADS_FOR_README/Subdomain.mp4)
+The PoC are Currently to large for github displaying, click and you get downloaded PoC
+[Watch Subdomain Enumeration](https://raw.githubusercontent.com/shadow0striker0-ai/ShadXAlf/main/UPLOADS_FOR_README/Subdomain.mp4)
 
 ## Requirements
 
@@ -103,17 +105,26 @@ python main_men.py
 ```text
 ShadXAlf/
 ├── README.md
-├── SOURCE/
-│   ├── main_men.py
-│   ├── DATA/
-│   ├── MODULES/
-│   │   ├── CATEGORIES/
-│   │   │   └── Domain_search/
-│   │   │       └── domain_methods.py
-│   │   └── CREDITS/
-│   │       └── show_credits.py
-│   └── UPLOADS_FOR_README/
-└── Dark_site/
+├── main_men.py
+├── CONFIG/
+│   └── placeholder.txt
+├── MODULES/
+│   ├── placeholder.txt
+│   ├── CATEGORIES/
+│   │   ├── modules.py
+│   │   ├── placeholder.txt
+│   │   ├── Domain_search/
+│   │       └── Domain_methods.py
+│   │
+│   ├── CREDITS/
+│   │   └── show_credits.py
+│   └── UTILITIES/
+│       ├── __init_.py
+│       └── ascii.py
+└── UPLOADS_FOR_README/
+	├── Collab_Readme.png
+	├── Host_discovery.mp4
+	└── Subdomain.mp4
 ```
 
 ## Menu Info
