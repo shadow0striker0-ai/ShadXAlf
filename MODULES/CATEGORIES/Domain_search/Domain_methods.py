@@ -282,10 +282,11 @@ def url_checker():
 
 # Color settings
 CYAN = '\033[96m'
+COLORRESET = "\033[0m"
 
 # Displays the domain menu and processes the user's selection.
 def main():
-    print(f"{CYAN}{DOMAINSEARCHER}{CYAN}")
+    print(f"{CYAN}{DOMAINSEARCHER}{COLORRESET}")
     choice = input("Select an option: ").strip()
 
     if choice in {"1", "01"}:
