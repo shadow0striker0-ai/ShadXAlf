@@ -48,5 +48,5 @@ sleep(3)
 
 #returns
 project_root = Path(__file__).resolve().parents[1]
-main_menu = project_root / "SOURCE" / "main_men.py"
+main_menu = project_root / "main_men.py"
 subprocess.run([sys.executable, str(main_menu)], check=False)
