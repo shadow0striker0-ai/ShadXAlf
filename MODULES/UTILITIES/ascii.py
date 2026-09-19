@@ -1,15 +1,33 @@
-
 ########################
 # This file exhists just for the purpose of storing the logos and colors for the main menu and the modules.
 ########################
 
+#imports for random colors
+from random import choice
 
-#colors for the logos
+#colors for the color_choice 
 CYAN = '\033[96m'
 BLUE = '\033[94m'
 RED = '\033[91m'
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+PURPLE = "\033[95m"
+WHITE = "\033[97m"
+DARK_RED = "\033[31m"
+DARK_GREEN = "\033[32m"
+DARK_YELLOW = "\033[33m"
+DARK_BLUE = "\033[34m"
+DARK_PURPLE = "\033[35m"
+DARK_CYAN = "\033[36m"
+
+#Color Reset
 COLORRESET = "\033[0m"
 
+#random Color themes
+COLORS_TO_CHOICE = [CYAN, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE, DARK_RED, DARK_GREEN, DARK_YELLOW, DARK_BLUE, DARK_PURPLE, DARK_CYAN]
+
+#choose random Color
+COLOR_CHOICE = choice(COLORS_TO_CHOICE)
 
 #Logos for the main menu and the modules
 LOGO = r"""

@@ -7,7 +7,8 @@ from pathlib import Path
 import unicodedata
 from time import sleep
 from MODULES.UTILITIES.ascii import (
-    CYAN, 
+    CYAN,
+    COLORRESET, 
     BLUE, 
     RED, 
     LOGO, 
@@ -32,10 +33,10 @@ clear_screen()
 
 
 #print the main logo
-print(f"{CYAN}{LOGO}{CYAN}")
+print(f"{CYAN}{LOGO}{COLORRESET}")
 
 
-
+def User
 
 #Loads the Domain Searcher
 def Domain_searcher():
@@ -43,7 +44,7 @@ def Domain_searcher():
     #clear screen
     clear_screen()
 
-    print(DOMAINSEARCHER)
+    print(f"{BLUE}{DOMAINSEARCHER}{COLORRESET}")
 
     #Loading Animation for Module Loading
     for dot_count in range(1, 10):
