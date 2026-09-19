@@ -167,7 +167,7 @@ The main menu currently contains these regular options:
 [999] Credits
 ```
 
-# Inside the Domain Searcher:
+# Inside the Network RECON:
 
 ```text
 [01] - Host Discovery                              [99] - Exit
