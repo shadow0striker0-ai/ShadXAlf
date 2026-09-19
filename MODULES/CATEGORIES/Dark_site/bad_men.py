@@ -47,6 +47,6 @@ print(f"{RED}{MENU}{RED}")
 sleep(3)
 
 #returns
-project_root = Path(__file__).resolve().parents[1]
+project_root = Path(__file__).resolve().parents[3]
 main_menu = project_root / "main_men.py"
 subprocess.run([sys.executable, str(main_menu)], check=False)

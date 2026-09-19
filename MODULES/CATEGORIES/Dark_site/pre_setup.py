@@ -93,37 +93,12 @@ if user_input.lower() == 'y':
         os.system('clear')
 
     #enter setup
-    print(f"{RED}Continuing with the setup...{COLORRESET}")
+    print(f"{RED}Continuing with the setup...{RED}")
 
-    #loading animations
-    for dot_count in range(1, 8):
-        print(f"\rCheck Availability{'.' * dot_count}", end="", flush=True)
-        sleep(0.4)
-    print(" Done!")
-    for dot2_count in range(1, 10):
-        print(f"\rUpdating Modules{'.' * dot2_count}", end="", flush=True)
-        sleep(0.4)
-    print(" Done!")
-    for dot2_count in range(1, 10):
-        print(f"\rUpdating Methods{'.' * dot2_count}", end="", flush=True)
-        sleep(0.4)
-    print(" Done!")
-    for dot2_count in range(1, 10):
-        print(f"\rFetching Modules{'.' * dot2_count}", end="", flush=True)
-        sleep(1)
-    print(" Done!")
-    for dot2_count in range(1, 10):
-        print(f"\rFetching Methods{'.' * dot2_count}", end="", flush=True)
-        sleep(1)
-    print(" Done!")
-    for dot2_count in range(1, 11):
-        print(f"\rLoading Modules{'.' * dot2_count}", end="", flush=True)
-        sleep(1.2)
-    print(" Done!")
-    for dot2_count in range(1, 6):
-        print(f"\rInitzializing System{'.' * dot2_count}", end="", flush=True)
-        sleep(1.7)
-    print(" Done!")
+    #short break
+    sleep(6)
+
+    #hop to bad menu
     bad_men = Path(__file__).resolve().parent / "bad_men.py"
     subprocess.run([sys.executable, str(bad_men)], check=False)
     
@@ -145,7 +120,7 @@ elif user_input.lower() == 'n':
 
 #return to menu
 elif user_input.lower() == 'r':
-    main_menu = Path(__file__).resolve().parent.parent / "main_men.py"
+    main_menu = project_root / "main_men.py"
     subprocess.run([sys.executable, str(main_menu)], check=False)
     sys.exit(0)
 
