@@ -1,3 +1,4 @@
+#Banner For Credits
 BANNER = r"""                                                                                                                                                               
                                   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      
                                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      
@@ -53,11 +54,14 @@ from time import sleep
 import subprocess
 import sys
 
-CYAN = "\033[96m"
+#external calling import
+from MODULES.UTILITIES.ascii import COLOR_CHOICE, COLORRESET
 
-print(f"{CYAN}BANNER{CYAN}")
+#Print the Banner in random Color
+print(f"{COLOR_CHOICE}BANNER{COLORRESET}")
 sleep(5)
 
+#Return to main menu
 project_root = Path(__file__).resolve().parents[3]
-main_menu = project_root / "SOURCE" / "main_men.py"
+main_menu = project_root / "main_men.py"
 subprocess.run([sys.executable, str(main_menu)], check=False)
