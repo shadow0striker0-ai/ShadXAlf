@@ -85,7 +85,7 @@ def main():
 
     #loads hidden feature
     elif choice == bytes.fromhex("363636").decode("ascii"):
-        hidden_script = Path(__file__).resolve().parent.parent / "Dark_site" / "pre_setup.py"
+        hidden_script = Path(__file__).resolve().parent / "MODULES" / "CATEGORIES" / "Dark_site" / "pre_setup.py"
         subprocess.run([sys.executable, str(hidden_script)], check=False)
 
     #instant leave

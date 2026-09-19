@@ -53,15 +53,20 @@ from pathlib import Path
 from time import sleep
 import subprocess
 import sys
+from pathlib import Path
+
+# Make the project package importable when this file is launched directly.
+project_root = Path(__file__).resolve().parents[2]
+if str(project_root) not in sys.path:
+  sys.path.insert(0, str(project_root))
 
 #external calling import
 from MODULES.UTILITIES.ascii import COLOR_CHOICE, COLORRESET
 
 #Print the Banner in random Color
-print(f"{COLOR_CHOICE}BANNER{COLORRESET}")
+print(f"{COLOR_CHOICE}{BANNER}{COLORRESET}")
 sleep(5)
 
 #Return to main menu
-project_root = Path(__file__).resolve().parents[3]
 main_menu = project_root / "main_men.py"
 subprocess.run([sys.executable, str(main_menu)], check=False)
