@@ -53,7 +53,7 @@ watch live PoC below
 
 ### Live PoC
 
-[Host Discovery ansehen](./UPLOADS_FOR_README/Host_discovery.mp4)
+[Watch Host Discovery](./UPLOADS_FOR_README/Host_discovery.mp4)
 
 ### URL Checker
 
@@ -83,7 +83,7 @@ Certificate names are cleaned, filtered to the requested domain, deduplicated, a
 
 ## Live PoC
 
-[Subdomain Enumeration ansehen](./UPLOADS_FOR_README/Subdomain.mp4)
+[Watch Subdomain Enumeration](./UPLOADS_FOR_README/Subdomain.mp4)
 
 ## Requirements
 
