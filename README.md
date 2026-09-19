@@ -28,7 +28,6 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 - Email searcher
 - Phone number searcher
 - IP tracker
-- Social media searcher
 - URL checker improvements and broader detection rules
 - More reliable error handling and result presentation
 - Automated tests and documentation
