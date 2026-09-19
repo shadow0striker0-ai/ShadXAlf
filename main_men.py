@@ -17,7 +17,6 @@ from MODULES.UTILITIES.ascii import (
 #external module calling
 from MODULES.CATEGORIES.modules import (
     Domain_searcher,
-    Social_searcher,
     Ip_tracker,
     Phone_searcher,
     user_searcher,
@@ -67,10 +66,6 @@ def main():
     #categorie 5
     elif choice == "5":
         Domain_searcher() # hop into the domain searcher function
-
-    #categorie 6
-    elif choice == "6":
-        Social_searcher() #hop into social searcher
 
     #exit function
     elif choice == "99":
