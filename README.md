@@ -182,9 +182,12 @@ The main menu currently contains these regular options:
 [04] - DNS Digging [Works, still in progress]
 ```
 
-> [!IMPORTANT]\
-> Legal Notice
+> [!IMPORTANT]
+> **Legal Notice**
+>
+> ShadXAlf is intended for lawful security research, OSINT, education, and analysis of systems you own or are authorized to inspect.    Always respect applicable laws, terms of service, privacy requirements, and the permissions of system owners.
+>
+> The authors are not responsible for misuse of this project.
 
-ShadXAlf is intended for lawful security research, OSINT, education, and analysis of systems you own or are authorized to inspect. Always respect applicable laws, terms of service, privacy requirements, and the permissions of system owners.
 
-The authors are not responsible for misuse of this project.
+
