@@ -53,9 +53,7 @@ watch live PoC below
 
 ### Live PoC
 
-<video controls width="800">
-  <source src="./UPLOADS_FOR_README/Host_discovery.mp4" type="video/mp4">
-</video>
+[Host Discovery ansehen](./UPLOADS_FOR_README/Host_discovery.mp4)
 
 ### URL Checker
 
@@ -85,9 +83,7 @@ Certificate names are cleaned, filtered to the requested domain, deduplicated, a
 
 ## Live PoC
 
-<video controls width="800">
-  <source src="./UPLOADS_FOR_README/Subdomain.mp4" type="video/mp4">
-</video>
+[Subdomain Enumeration ansehen](./UPLOADS_FOR_README/Subdomain.mp4)
 
 ## Requirements
 
