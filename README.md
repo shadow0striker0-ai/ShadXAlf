@@ -10,6 +10,7 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 > Tested but might be prone to bugs.
 
 - Terminal-based main menu
+- Random Ascii Colors
 - Domain search menu
 - Host discovery using DNS resolution
 - IPv4 and IPv6 address lookup
@@ -48,6 +49,13 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 ### Host Discovery
 
 Resolves a hostname or IP address and displays available addresses. When possible, the tool also attempts a reverse DNS lookup.
+watch live PoC below
+
+### Live PoC
+
+<video controls width="800">
+  <source src="./UPLOADS_FOR_README/Host_discovery.mp4" type="video/mp4">
+</video>
 
 ### URL Checker
 
@@ -75,9 +83,15 @@ https://crt.name/v1/search?apex={domain}
 
 Certificate names are cleaned, filtered to the requested domain, deduplicated, and displayed. This is passive enumeration and does not actively scan hosts.
 
+## Live PoC
+
+<video controls width="800">
+  <source src="./UPLOADS_FOR_README/Subdomain.mp4" type="video/mp4">
+</video>
+
 ## Requirements
 
-- Python 3.10 or newer
+- Python 3.13 or newer
 - Internet access for DNS, URL, and Certificate Transparency lookups
 - No third-party Python packages are currently required
 
