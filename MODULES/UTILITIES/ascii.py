@@ -49,7 +49,7 @@ LOGO = r"""
  ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═══╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
         [1] - Username Searcher [SOON]   [2] - Email Searcher  [SOON]      [3] - Phone Number Searcher [SOON]
-        [4] - IP Tracker        [SOON]   [5] - Domain Searcher [Work]      [6] - Social Media Searcher [SOON]
+        [4] - IP Tracker        [SOON]   [5] - Network recon   [Work]      [6] - Social Media Searcher [SOON]
 
         
                 
