@@ -8,32 +8,13 @@ from time import sleep
 #External module calls
 from MODULES.UTILITIES.ascii import (
     COLORRESET, 
-    COLOR_CHOICE,
-    SOCIALSEARCHER, 
+    COLOR_CHOICE, 
     IPTRACKER, 
     PHONESEARCHER, 
     EMAILSEARCHER, 
     USERSEARCHER,
     DOMAINSEARCHER
 )
-
-#loads the social searcher
-def Social_searcher():
-
-    #clear screen
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')
-
-    #Print the social searcher logo
-    print(f"{COLOR_CHOICE}{SOCIALSEARCHER}{COLORRESET}")
-
-    #Animation for loading
-    for dot in range(1, 10):
-        print(f"\rSocial Searcher is loading {'.' * dot}", end="", flush=True)
-    sleep(0.5)
-    print(" Success")
 
 #loads the domain searcher module
 def Domain_searcher():
