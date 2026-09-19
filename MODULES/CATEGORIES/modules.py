@@ -13,7 +13,8 @@ from MODULES.UTILITIES.ascii import (
     IPTRACKER, 
     PHONESEARCHER, 
     EMAILSEARCHER, 
-    USERSEARCHER
+    USERSEARCHER,
+    DOMAINSEARCHER
 )
 
 #loads the social searcher
@@ -43,6 +44,9 @@ def Domain_searcher():
     else:
         os.system('clear')
 
+    #print the banner
+    print(f"{COLOR_CHOICE}{DOMAINSEARCHER}{COLORRESET}")
+
     #Loads the tool Loading Animation
     for dot in range(1, 10):
         print(f"\rDomain Searcher is loading {'.' * dot}", end="", flush=True)
@@ -51,10 +55,8 @@ def Domain_searcher():
     #module path
     domain_module = (
         Path(__file__).resolve().parent
-        / "MODULES"
-        / "CATEGORIES"
         / "Domain_search"
-        / "domain_methods.py"
+        / "Domain_methods.py"
     )
     subprocess.run([sys.executable, str(domain_module)], check=False)
 
