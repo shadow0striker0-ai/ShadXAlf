@@ -6,20 +6,23 @@ import sys
 from pathlib import Path
 import unicodedata
 from time import sleep
+
+#external utilities
 from MODULES.UTILITIES.ascii import (
-    CYAN,
-    COLORRESET, 
-    BLUE, 
-    RED, 
-    LOGO, 
-    SOCIALSEARCHER, 
-    IPTRACKER, 
-    PHONESEARCHER, 
-    EMAILSEARCHER, 
-    USERSEARCHER,
-    DOMAINSEARCHER
+    COLORRESET,
+    LOGO,
+    COLOR_CHOICE,
 )
-from MODULES.CATEGORIES.modules import *
+
+#external module calling
+from MODULES.CATEGORIES.modules import (
+    Domain_searcher,
+    Social_searcher,
+    Ip_tracker,
+    Phone_searcher,
+    user_searcher,
+    email_searcher
+)
 
 #clear screen
 def clear_screen():
@@ -31,31 +34,8 @@ def clear_screen():
         return
 clear_screen()
 
-
 #print the main logo
-print(f"{CYAN}{LOGO}{COLORRESET}")
-
-
-def User
-
-#Loads the Domain Searcher
-def Domain_searcher():
-
-    #clear screen
-    clear_screen()
-
-    print(f"{BLUE}{DOMAINSEARCHER}{COLORRESET}")
-
-    #Loading Animation for Module Loading
-    for dot_count in range(1, 10):
-        print(f"\rDomain Searcher is loading{'.' * dot_count}", end="", flush=True)
-    sleep(0.5)
-
-    #run the module
-    Domain_Script = Path(__file__).resolve().parent.parent / "Domain_search" / "Domain_methods.py"
-    subprocess.run([sys.executable, str(Domain_Script)], check=False)
-
-
+print(f"{COLOR_CHOICE}{LOGO}{COLORRESET}")
 
 #Main Menu
 def main():
@@ -101,9 +81,7 @@ def main():
     #show credits
     elif choice == "999":
         credits_script = Path(__file__).resolve().parent / "MODULES" / "CREDITS" / "show_credits.py"
-        subprocess.run([sys.executable, str(credits_script)], check=False)
-        clear_screen()
-        print(f"{CYAN}{LOGO}{CYAN}")
+        subprocess.run([sys.executable, str(credits_script)], check=False)       
 
     #loads hidden feature
     elif choice == bytes.fromhex("363636").decode("ascii"):
