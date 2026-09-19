@@ -120,8 +120,6 @@ elif user_input.lower() == 'n':
 
 #return to menu
 elif user_input.lower() == 'r':
-    main_menu = project_root / "main_men.py"
-    subprocess.run([sys.executable, str(main_menu)], check=False)
     sys.exit(0)
 
 #instant exit
