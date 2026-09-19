@@ -5,6 +5,7 @@ import re
 import socket
 import subprocess
 import sys
+import dns.resolver
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -20,20 +21,59 @@ def clear_screen():
 clear_screen()
 
 DOMAINSEARCHER = r"""
- ██████████                                       ███                         █████████                                        █████     
-░░███░░░░███                                     ░░░                         ███░░░░░███                                      ░░███      
- ░███   ░░███  ██████  █████████████    ██████   ████  ████████             ░███    ░░░   ██████   ██████   ████████   ██████  ░███████  
- ░███    ░███ ███░░███░░███░░███░░███  ░░░░░███ ░░███ ░░███░░███  ██████████░░█████████  ███░░███ ░░░░░███ ░░███░░███ ███░░███ ░███░░███ 
- ░███    ░███░███ ░███ ░███ ░███ ░███   ███████  ░███  ░███ ░███ ░░░░░░░░░░  ░░░░░░░░███░███████   ███████  ░███ ░░░ ░███ ░░░  ░███ ░███ 
- ░███    ███ ░███ ░███ ░███ ░███ ░███  ███░░███  ░███  ░███ ░███             ███    ░███░███░░░   ███░░███  ░███     ░███  ███ ░███ ░███ 
- ██████████  ░░██████  █████░███ █████░░████████ █████ ████ █████           ░░█████████ ░░██████ ░░████████ █████    ░░██████  ████ █████
-░░░░░░░░░░    ░░░░░░  ░░░░░ ░░░ ░░░░░  ░░░░░░░░ ░░░░░ ░░░░ ░░░░░             ░░░░░░░░░   ░░░░░░   ░░░░░░░░ ░░░░░      ░░░░░░  ░░░░ ░░░░
+██████   █████           █████                                       █████                 ███████████   ██████████   █████████     ███████    ██████   █████
+░░██████ ░░███           ░░███                                       ░░███                 ░░███░░░░░███ ░░███░░░░░█  ███░░░░░███  ███░░░░░███ ░░██████ ░░███ 
+ ░███░███ ░███   ██████  ███████   █████ ███ █████  ██████  ████████  ░███ █████            ░███    ░███  ░███  █ ░  ███     ░░░  ███     ░░███ ░███░███ ░███ 
+ ░███░░███░███  ███░░███░░░███░   ░░███ ░███░░███  ███░░███░░███░░███ ░███░░███  ██████████ ░██████████   ░██████   ░███         ░███      ░███ ░███░░███░███ 
+ ░███ ░░██████ ░███████   ░███     ░███ ░███ ░███ ░███ ░███ ░███ ░░░  ░██████░  ░░░░░░░░░░  ░███░░░░░███  ░███░░█   ░███         ░███      ░███ ░███ ░░██████ 
+ ░███  ░░█████ ░███░░░    ░███ ███ ░░███████████  ░███ ░███ ░███      ░███░░███             ░███    ░███  ░███ ░   █░░███     ███░░███     ███  ░███  ░░█████ 
+ █████  ░░█████░░██████   ░░█████   ░░████░████   ░░██████  █████     ████ █████            █████   █████ ██████████ ░░█████████  ░░░███████░   █████  ░░█████
+░░░░░    ░░░░░  ░░░░░░     ░░░░░     ░░░░ ░░░░     ░░░░░░  ░░░░░     ░░░░ ░░░░░            ░░░░░   ░░░░░ ░░░░░░░░░░   ░░░░░░░░░     ░░░░░░░    ░░░░░    ░░░░░
 
-    [01] - Host Discovery
-    [02] - URL checker
-    [03] - Subdomain enumeration
+[01] - Host Discovery                              [99] - Exit
+[02] - URL checker
+[03] - Subdomain enumeration
+[04] - DNS Digging [Works, still in progress]      
 """
 
+
+
+# The DNS digger.
+def dns_digger():
+
+    #print note
+    print("Please Note this Tool is in Progress; it may still have bugs.")
+
+    #user input
+    user_input = input("Enter Target domain (Without HTTPS/HTTP)~ ").strip()
+
+    #invalid choice handling
+    if not user_input:
+        print("Please enter a domain.")
+        return
+
+    #record Types
+    record_types = (
+        "A", "AAAA", "MX", "NS", "TXT", "CNAME", "SOA", "CAA", "SRV", "HTTPS", "PTR"
+    )
+
+    #record type valitation
+    for record_type in record_types:
+        print(f"\n[{record_type}]")
+        try:
+            answers = dns.resolver.resolve(user_input, record_type)
+        except dns.resolver.NXDOMAIN:
+            print("The domain does not exist.")
+            return
+        except dns.resolver.NoAnswer:
+            print("No record found.")
+            continue
+        except (dns.resolver.NoNameservers, dns.resolver.LifetimeTimeout) as error:
+            print(f"DNS query failed: {error}")
+            continue
+
+        for answer in answers:
+            print(answer.to_text())
 
 # Starts the main menu again when the user enters q.
 def return_to_main_menu():
@@ -295,7 +335,9 @@ def main():
         url_checker()
     elif choice in {"3", "03"}:
         subdomain_enumeration()
-    elif choice.lower() == "q":
+    elif choice in {"4", "04"}:
+        dns_digger()
+    elif choice == "99":
         return_to_main_menu()
         return
     else:

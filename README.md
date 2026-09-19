@@ -11,7 +11,8 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 
 - Terminal-based main menu
 - Random Ascii Colors
-- Domain search menu
+- Network RECON menu
+- DNS Digger [Works, Still in Progress]
 - Host discovery using DNS resolution
 - IPv4 and IPv6 address lookup
 - Optional reverse DNS lookup
@@ -34,7 +35,6 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 
 ### Planned Additions
 > Plans are not guaranteed additions.  
-- DNS Digger
 - Google Dorking
 - Leaked Databreach Search
 - Scripting
@@ -87,24 +87,49 @@ Certificate names are cleaned, filtered to the requested domain, deduplicated, a
 The PoC are Currently to large for github displaying, click and you get downloaded PoC
 [Watch Subdomain Enumeration](https://raw.githubusercontent.com/shadow0striker0-ai/ShadXAlf/main/UPLOADS_FOR_README/Subdomain.mp4)
 
+### DNS-DIGGER
+
+The DNS Digger is currently working, currently Outputs below
+```text
+- A
+- AAAA
+- MX
+- NS
+- TXT
+- CNAME
+- SOA
+- CAA
+- SRV
+- HTTPS
+```
+
+## Live PoC
+
+The PoC are Currently to large for github displaying, click and you get downloaded PoC
+[Watch Subdomain Enumeration](https://raw.githubusercontent.com/shadow0striker0-ai/ShadXAlf/main/UPLOADS_FOR_README/DNS_DIGGER.mp4)
+
 ## Requirements
 
 - Python 3.13 or newer
 - Internet access for DNS, URL, and Certificate Transparency lookups
-- No third-party Python packages are currently required
+- Virtual Environment
 
 ## Usage
 
-Run the main menu from the project root:
-
-```powershell
+# On linux
+```text
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
 python main_men.py
 ```
+
 ## Project Structure
 
 ```text
 ShadXAlf/
 ├── README.md
+├── requirements.txt
 ├── main_men.py
 ├── CONFIG/
 │   └── placeholder.txt
@@ -124,6 +149,7 @@ ShadXAlf/
 └── UPLOADS_FOR_README/
 	├── Collab_Readme.png
 	├── Host_discovery.mp4
+    ├── DNS_DIGGER.mp4
 	└── Subdomain.mp4
 ```
 
@@ -135,22 +161,20 @@ The main menu currently contains these regular options:
 [2] Email Searcher
 [3] Phone Number Searcher
 [4] IP Tracker
-[5] Domain Searcher
+[5] Network RECON
 [6] Social Media Searcher
 [99] Exit
 [999] Credits
 ```
 
-Inside the Domain Searcher:
+# Inside the Domain Searcher:
 
 ```text
-[01] Host Discovery
-[02] URL checker
-[03] Subdomain enumeration
+[01] - Host Discovery                              [99] - Exit
+[02] - URL checker
+[03] - Subdomain enumeration
+[04] - DNS Digging [Works, still in progress]
 ```
-
-Enter `q` in the domain tools to return to the main menu.
-
 
 > [!IMPORTANT]\
 > Legal Notice
