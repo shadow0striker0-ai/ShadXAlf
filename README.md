@@ -45,6 +45,7 @@ ShadXAlf is a terminal-based OSINT framework for defensive and legal reconnaissa
 
 > [!IMPORTANT]\
 > Submiit Ideas
+
 Feel Free To DM me on my Discord @shadow_ghoul09
 My DMs are 24/7 Open, if i reply i cant promise,
 but sent in add friends your idea to submit
