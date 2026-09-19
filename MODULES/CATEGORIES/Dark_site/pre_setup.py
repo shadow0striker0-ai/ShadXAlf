@@ -5,6 +5,9 @@ import subprocess
 from pathlib import Path
 from time import sleep
 
+#external calling
+from MODULES.UTILITIES.ascii import COLORRESET
+
 #clear the screen
 def clear_screen():
     if os.name == 'nt':
@@ -67,14 +70,13 @@ WARNING = r"""
 """
 
 #colors for the logo
-CYAN = '\033[96m'
 RED = '\033[91m'
 
 #print the logo
-print(f"{RED}{WARNING}{RED}")
+print(f"{RED}{WARNING}{COLORRESET}")
 
 #user input
-user_input = input(f"{CYAN}Do you want to continue? (y/n) for return(r): {CYAN}")
+user_input = input(f"{RED}Do you want to continue? (y/n) for return(r): {COLORRESET}")
 
 #check the user input
 if user_input.lower() == 'y':
@@ -86,7 +88,7 @@ if user_input.lower() == 'y':
         os.system('clear')
 
     #enter setup
-    print(f"{CYAN}Continuing with the setup...{CYAN}")
+    print(f"{RED}Continuing with the setup...{COLORRESET}")
 
     #loading animations
     for dot_count in range(1, 8):
@@ -138,7 +140,7 @@ elif user_input.lower() == 'n':
 
 #return to menu
 elif user_input.lower() == 'r':
-    main_menu = Path(__file__).resolve().parent.parent / "SOURCE" / "main_men.py"
+    main_menu = Path(__file__).resolve().parent.parent / "main_men.py"
     subprocess.run([sys.executable, str(main_menu)], check=False)
     sys.exit(0)
 
