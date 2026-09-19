@@ -15,7 +15,8 @@ from MODULES.UTILITIES.ascii import (
     IPTRACKER, 
     PHONESEARCHER, 
     EMAILSEARCHER, 
-    USERSEARCHER
+    USERSEARCHER,
+    DOMAINSEARCHER
 )
 from MODULES.CATEGORIES.modules import *
 
@@ -23,13 +24,36 @@ from MODULES.CATEGORIES.modules import *
 def clear_screen():
     if os.name == 'nt':
         os.system('cls')
+        return
     else:
         os.system('clear')
+        return
 clear_screen()
 
 
 #print the main logo
 print(f"{CYAN}{LOGO}{CYAN}")
+
+
+
+
+#Loads the Domain Searcher
+def Domain_searcher():
+
+    #clear screen
+    clear_screen()
+
+    print(DOMAINSEARCHER)
+
+    #Loading Animation for Module Loading
+    for dot_count in range(1, 10):
+        print(f"\rDomain Searcher is loading{'.' * dot_count}", end="", flush=True)
+    sleep(0.5)
+
+    #run the module
+    Domain_Script = Path(__file__).resolve().parent.parent / "Domain_search" / "Domain_methods.py"
+    subprocess.run([sys.executable, str(Domain_Script)], check=False)
+
 
 
 #Main Menu

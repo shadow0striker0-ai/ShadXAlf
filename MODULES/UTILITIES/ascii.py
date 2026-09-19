@@ -8,6 +8,7 @@
 CYAN = '\033[96m'
 BLUE = '\033[94m'
 RED = '\033[91m'
+COLORRESET = "\033[0m"
 
 
 #Logos for the main menu and the modules
